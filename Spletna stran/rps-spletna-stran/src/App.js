@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route}
+    from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "./navigation/Navbar.js";
+import Footer from "./footer/Footer.js";
+import Home from "./pages";
+import Item from "./pages/item.js";
+import ListItems from "./pages/listItem.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    //<main class="p-4 flex-grow bg-gray-200"><h1>Splish Splash You Are Trash</h1></main>
+    <div class="flex flex-col h-screen">
+      <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/' exact element={<Home />} />
+        <Route path='/item' element={<Item />} />
+        <Route path='/listItems' element={<ListItems />} />
+      </Routes>
+      <Footer />
+      </Router>
     </div>
   );
 }
 
 export default App;
+
