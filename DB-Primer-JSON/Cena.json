@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "6266c519c565c51fecc91426"
+  },
+  "id_izdelka": {
+    "$oid": "6266c4f7c565c51fecc91421"
+  },
+  "Datum_cas": {
+    "$date": {
+      "$numberLong": "946681200000"
+    }
+  },
+  "Cena": 23.22
+}]

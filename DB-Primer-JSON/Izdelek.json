@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "6266c2d1c565c51fecc9141d"
+  },
+  "id_trgovine": {
+    "$oid": "6266c19dc565c51fecc91412"
+  },
+  "Naziv": "test",
+  "Vrsta": "računalniška oprema",
+  "Opis": "opis izdelka",
+  "Slika": "slika.png"
+}]
