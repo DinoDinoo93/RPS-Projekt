@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+//Izdelek stran
+
+.itemImage {
+  height: 25%;
+  width: 25%;
+}
