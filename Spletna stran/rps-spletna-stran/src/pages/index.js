@@ -18,7 +18,9 @@ const Home = () => {
                     {data.resources.map((resource, index) => {
                         return (
                             <Carousel.Item>
-                                <img width="100%" src={resource.imageUrl} />
+                                <a href={"/item?index=" + resource.index} >
+                                    <img width="100%" src={resource.imageUrl} />
+                                </a>
                             </Carousel.Item>
                         );
                     })}
