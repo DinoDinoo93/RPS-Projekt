@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "6269d3ed415faf02a2aa92f3"
+  },
+  "id_trgovine": {
+    "$oid": "6266c19dc565c51fecc91412"
+  },
+  "Naziv": "test",
+  "Vrsta": "računalniška oprema",
+  "Opis": "opis izdelka",
+  "Podjetje": "Intel",
+  "Slika": "slika.png"
+}]
