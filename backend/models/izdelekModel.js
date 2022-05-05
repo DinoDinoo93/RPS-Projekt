@@ -2,14 +2,12 @@ var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
 
 var izdelekSchema = new Schema({
-	'id_trgovine' :  {
-		type: Schema.Types.ObjectId,
-		ref: 'trgovina'
-   },
+	'id_trgovine' :  String,
 	'Naziv' : String,
 	'Vrsta' : String,
 	'Opis' : String,
-	'Slika' : String
+	'Slika' : String,
+	'Kategorija' : String
 });
 
 izdelekSchema.pre('save', function(next){

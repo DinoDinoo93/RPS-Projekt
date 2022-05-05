@@ -22,6 +22,19 @@ module.exports = {
             return res.json(cenas);
         });
     },
+    ceneIzdelka: function (req, res) {
+        var id = req.params.id;
+        CenaModel.find({id_izdelka:id},function (err, cenas) {
+            if (err) {
+                return res.status(500).json({
+                    message: 'Error when getting cena.',
+                    error: err
+                });
+            }
+            console.log(id);
+            return res.json(cenas);
+        });
+    },
 
     /**
      * cenaController.show()
@@ -51,6 +64,7 @@ module.exports = {
      * cenaController.create()
      */
     create: function (req, res) {
+
         var cena = new CenaModel({
 			id_izdelka : req.body.id_izdelka,
 			Datum_cas : req.body.Datum_cas,

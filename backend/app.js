@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 // vključimo mongoose in ga povežemo z MongoDB
 var mongoose = require('mongoose');
-var mongoDB = "mongodb://127.0.0.1/RPS"; // vlkuci se baza tukaj 
+var mongoDB = "mongodb://127.0.0.1/RPSa"; // vlkuci se baza tukaj 
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;

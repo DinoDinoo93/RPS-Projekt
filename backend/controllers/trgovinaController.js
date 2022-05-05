@@ -1,5 +1,5 @@
 var TrgovinaModel = require('../models/trgovinaModel.js');
-
+var IzdelekModel = require('../models/izdelekModel.js');
 /**
  * trgovinaController.js
  *
@@ -27,12 +27,11 @@ module.exports = {
      * trgovinaController.show()
      */
     show: function (req, res) {
-        var id = req.params.id;
-
-        TrgovinaModel.findOne({_id: id}, function (err, trgovina) {
+        var nazivTrgovina = req.params.id;
+        TrgovinaModel.findOne({Naziv: nazivTrgovina}, function (err, trgovina) {
             if (err) {
                 return res.status(500).json({
-                    message: 'Error when getting trgovina.',
+                    message: 'Error when getting trgovina',
                     error: err
                 });
             }
@@ -43,18 +42,43 @@ module.exports = {
                 });
             }
 
-            return res.json(trgovina);
+            console.log(trgovina.Naziv);
+            console.log(trgovina._id);
+
+            IzdelekModel.find({id_trgovine: trgovina._id}, function (err, izdelek) {
+                if (err) {
+                    return res.status(500).json({
+                        message: 'Error when getting trgovina',
+                        error: err
+                    });
+                }
+    
+                if (!izdelek) {
+                    return res.status(404).json({
+                        message: 'No such trgovina'
+                    });
+                }
+               
+               
+               return res.status(201).json(izdelek);
+            });
+
+
         });
     },
     showIzdelek: function (req, res) {
-        var id = req.params.id;
-        var idIzdelek = req.params.idIzdelek;
-        
-        TODO
-        /*TrgovinaModel.findOne({_id: id}, function (err, trgovina) {
+        var nazivTrgovina = req.params.id;
+        var idIzdelka = req.params.idIzdelek;
+        console.log(idIzdelka);
+        const request = require('request');
+        request('http://localhost:3001/cena/izdelek/'+idIzdelka, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log("ok")   
+         }
+        TrgovinaModel.findOne({Naziv: nazivTrgovina}, function (err, trgovina) {
             if (err) {
                 return res.status(500).json({
-                    message: 'Error when getting trgovina.',
+                    message: 'Error when getting trgovina',
                     error: err
                 });
             }
@@ -65,9 +89,30 @@ module.exports = {
                 });
             }
 
-            return res.json(trgovina);
-        });*/
-    },
+            //console.log(body);
+            //console.log(trgovina._id);
+
+            IzdelekModel.findOne({id_trgovine: trgovina._id,_id: idIzdelka}, function (err, izdelek) {
+                if (err) {
+                    return res.status(500).json({
+                        message: 'Error when getting trgovina',
+                        error: err
+                    });
+                }
+    
+                if (!izdelek) {
+                    return res.status(404).json({
+                        message: 'No such trgovina'
+                    });
+                }
+               
+               izdelek.cene = JSON.parse(body);
+               return res.status(201).json(izdelek);
+            });
+        });
+        })
+    }
+    ,
 
     /**
      * trgovinaController.create()
