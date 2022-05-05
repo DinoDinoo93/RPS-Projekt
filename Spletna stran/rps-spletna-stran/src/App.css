@@ -43,3 +43,9 @@
   height: 25%;
   width: 25%;
 }
+
+.graphContainer {
+  height: 300px;
+  width: 500px;
+  display: block;
+}

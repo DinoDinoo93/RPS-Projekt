@@ -2,45 +2,177 @@
     "resources": [
       {
         "index": "0",
-        "title": "Ryzen 7",
+        "id_trgovine": "567890987", 
+        "title": "Ryzen 7", 
+        "opis":  "To je opis", 
         "link": "http://localhost:3000/item",
-        "imageUrl": "https://www.mimovrste.com/i/43220161",
-        "cena": "100€"
+        "imageUrl": "https://www.mimovrste.com/i/43220161", 
+        "podjetje": "Noctua",
+        "kategorija": "komponente",
+        "cena": "100€",
+        "zgodovinaCen": [
+          {
+            "datumCene": "1.05.2022",
+            "cena": "100"
+          },
+          {
+            "datumCene": "2.05.2022",
+            "cena": "140"
+          },
+          {
+            "datumCene": "3.05.2022",
+            "cena": "120"
+          },
+          {
+            "datumCene": "4.05.2022",
+            "cena": "100"
+          }
+        ]
       },
       {
         "index": "1",
-        "title": "Ryzen 7",
+        "id_trgovine": "567890987", 
+        "title": "Ryzen 7", 
+        "opis":  "To je opis", 
         "link": "http://localhost:3000/item",
-        "imageUrl": "https://www.tradeinn.com/f/13795/137954422/amd-ryzen-7-5800x-3.8ghz-cpu.jpg",
-        "cena": "120€"
+        "imageUrl": "https://www.tradeinn.com/f/13795/137954422/amd-ryzen-7-5800x-3.8ghz-cpu.jpg", 
+        "podjetje": "Noctua",
+        "kategorija": "komponente",
+        "cena": "120€",
+        "zgodovinaCen": [
+          {
+            "datumCene": "1.05.2022",
+            "cena": "100"
+          },
+          {
+            "datumCene": "2.05.2022",
+            "cena": "140"
+          },
+          {
+            "datumCene": "3.05.2022",
+            "cena": "120"
+          },
+          {
+            "datumCene": "4.05.2022",
+            "cena": "100"
+          }
+        ]
       },
       {
         "index": "2",
-        "title": "Ryzen 9",
+        "id_trgovine": "567890987", 
+        "title": "Ryzen 9", 
+        "opis":  "To je opis", 
         "link": "http://localhost:3000/item",
-        "imageUrl": "https://www.mimovrste.com/i/52633571/550/550",
-        "cena": "140€"
+        "imageUrl": "https://www.mimovrste.com/i/52633571/550/550", 
+        "podjetje": "Noctua",
+        "kategorija": "komponente",
+        "cena": "140€",
+        "zgodovinaCen": [
+          {
+            "datumCene": "1.05.2022",
+            "cena": "100"
+          },
+          {
+            "datumCene": "2.05.2022",
+            "cena": "140"
+          },
+          {
+            "datumCene": "3.05.2022",
+            "cena": "120"
+          },
+          {
+            "datumCene": "4.05.2022",
+            "cena": "100"
+          }
+        ]
       },
       {
         "index": "3",
-        "title": "Ryzen 9",
+        "id_trgovine": "567890987", 
+        "title": "Ryzen 9", 
+        "opis":  "To je opis", 
         "link": "http://localhost:3000/item",
-        "imageUrl": "https://m.media-amazon.com/images/I/71S31CWSs3L._AC_SL1093_.jpg",
-        "cena": "160€"
+        "imageUrl": "https://m.media-amazon.com/images/I/71S31CWSs3L._AC_SL1093_.jpg", 
+        "podjetje": "Noctua",
+        "kategorija": "komponente",
+        "cena": "160€",
+        "zgodovinaCen": [
+          {
+            "datumCene": "1.05.2022",
+            "cena": "100"
+          },
+          {
+            "datumCene": "2.05.2022",
+            "cena": "140"
+          },
+          {
+            "datumCene": "3.05.2022",
+            "cena": "120"
+          },
+          {
+            "datumCene": "4.05.2022",
+            "cena": "100"
+          }
+        ]
       },
       {
         "index": "4",
-        "title": "Intel 9",
+        "id_trgovine": "567890987", 
+        "title": "Intel 9", 
+        "opis":  "To je opis", 
         "link": "http://localhost:3000/item",
-        "imageUrl": "https://www.mimovrste.com/i/48822525/550/550",
-        "cena": "180€"
+        "imageUrl": "https://www.mimovrste.com/i/48822525/550/550", 
+        "podjetje": "Noctua",
+        "kategorija": "komponente",
+        "cena": "180€",
+        "zgodovinaCen": [
+          {
+            "datumCene": "1.05.2022",
+            "cena": "100"
+          },
+          {
+            "datumCene": "2.05.2022",
+            "cena": "140"
+          },
+          {
+            "datumCene": "3.05.2022",
+            "cena": "120"
+          },
+          {
+            "datumCene": "4.05.2022",
+            "cena": "100"
+          }
+        ]
       },
       {
         "index": "5",
-        "title": "Intel 9",
+        "id_trgovine": "567890987", 
+        "title": "Ventilator za Pc", 
+        "opis":  "To je opis", 
         "link": "http://localhost:3000/item",
-        "imageUrl": "https://m.media-amazon.com/images/I/613CfTnpwoL._AC_SX450_.jpg",
-        "cena": "200€"
+        "imageUrl": "https://m.media-amazon.com/images/I/613CfTnpwoL._AC_SX450_.jpg", 
+        "podjetje": "Noctua",
+        "kategorija": "komponente",
+        "cena": "200€",
+        "zgodovinaCen": [
+          {
+            "datumCene": "1.05.2022",
+            "cena": "100"
+          },
+          {
+            "datumCene": "2.05.2022",
+            "cena": "140"
+          },
+          {
+            "datumCene": "3.05.2022",
+            "cena": "120"
+          },
+          {
+            "datumCene": "4.05.2022",
+            "cena": "100"
+          }
+        ]
       }
     ]
   }

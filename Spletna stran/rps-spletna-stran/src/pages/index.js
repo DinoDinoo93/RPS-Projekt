@@ -14,6 +14,7 @@ const Home = () => {
                 </div>
             </div>
             <div class="max-w-lg">
+                <h2>Najbolje iskani izdelki</h2>
                 <Carousel cols={3} rows={1} gap={10} loop>
                     {data.resources.map((resource, index) => {
                         return (
