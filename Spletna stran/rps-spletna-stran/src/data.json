@@ -32,7 +32,7 @@
       {
         "index": "1",
         "id_trgovine": "567890987", 
-        "title": "Ryzen 7", 
+        "title": "Ryzen 6", 
         "opis":  "To je opis", 
         "link": "http://localhost:3000/item",
         "imageUrl": "https://www.tradeinn.com/f/13795/137954422/amd-ryzen-7-5800x-3.8ghz-cpu.jpg", 
@@ -148,7 +148,7 @@
       {
         "index": "5",
         "id_trgovine": "567890987", 
-        "title": "Ventilator za Pc", 
+        "title": "Ventilator za PC", 
         "opis":  "To je opis", 
         "link": "http://localhost:3000/item",
         "imageUrl": "https://m.media-amazon.com/images/I/613CfTnpwoL._AC_SX450_.jpg", 
