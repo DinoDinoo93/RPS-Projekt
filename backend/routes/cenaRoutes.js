@@ -11,7 +11,7 @@ router.get('/', cenaController.list);
  * GET
  */
 router.get('/:id', cenaController.show);
-
+router.get('/izdelek/:id', cenaController.ceneIzdelka);
 /*
  * POST
  */

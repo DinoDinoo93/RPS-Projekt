@@ -2,10 +2,7 @@ var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
 
 var cenaSchema = new Schema({
-	'id_izdelka' : {
-		type: Schema.Types.ObjectId,
-		ref: 'izdelek'
-   },
+	'id_izdelka' : String,
 	'Datum_cas' : Date,
 	'Cena' : Number
 });

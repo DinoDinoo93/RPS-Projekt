@@ -51,6 +51,7 @@ module.exports = {
      * izdelekController.create()
      */
     create: function (req, res) {
+        
         var izdelek = new IzdelekModel({
 			id_trgovine : req.body.id_trgovine,
 			Naziv : req.body.Naziv,

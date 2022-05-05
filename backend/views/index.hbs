@@ -2,3 +2,58 @@
 <p>{{title}} backend aplikacije pri RPS</p>
 
 <a type="button"  href="/izdelek/">Vsi artikli(JSON)</span></a>
+
+
+<form action="/cena/" method="post" >
+  <div class="form-group">
+    <input type="date"  name="Datum_cas"  >
+  </div>
+    <div class="form-group">
+   <input type="text" name="id_izdelka" required>
+  </div>
+    </div>
+    <div class="form-group">
+   <input type="number" name="Cena" class="form-control" placeholder="Tag" required>
+  </div>
+
+ <div class="tp">
+        <input type="submit" value="Dodaj">
+    </div>
+</form>
+
+Trgovine
+<br><br>
+<form action="/trgovina/" method="post" >
+  <div class="form-group">
+    <input type="text"  name="Naziv"  >
+  </div>
+   
+ <div class="tp">
+        <input type="submit" value="Dodaj">
+    </div>
+</form>
+
+
+Izdelekk
+<br><br>
+<form action="/izdelek/" method="post" >
+  <div class="form-group">
+    <input type="text"  name="id_trgovine"  >
+  </div>
+   <div class="form-group">
+    <input type="text"  name="Naziv"  >
+  </div>
+   <div class="form-group">
+    <input type="text"  name="Vrsta"  >
+  </div>
+   <div class="form-group">
+    <input type="text"  name="Opis"  >
+  </div>
+   <div class="form-group">
+    <input type="test"  name="Slika"  >
+  </div>
+   
+ <div class="tp">
+        <input type="submit" value="Dodaj">
+    </div>
+</form>
