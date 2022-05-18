@@ -2,7 +2,7 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
-URL_SERVER = "http://localhost:3001/izdelek"
+URL_SERVER = "http://localhost:3001"
 
 ID_STORE = '62741fc2d35dc887e324bfc9'
 URL_STORE = 'https://www.mlacom.si'
@@ -86,31 +86,72 @@ def scanForMoreInfo(items):
     return itemsMoreInfo
 
 
-def postData(data):
+def postFullItem(data):
     for item in data:
         itemTransformed = {"id_trgovine": ID_STORE,
                            "Naziv": item["title"], "Opis": item["descLong"]+item["descShort"], "Slika": item["image"]}
-        r = requests.post(URL_SERVER, json=itemTransformed)
+        r = requests.post(URL_SERVER + "/izdelek", json=itemTransformed)
         if r.status_code != 201:
             print("Error posting data to the server")
             break
         print("Posted item with id: " + str(item["id"]))
 
 
-categories = scanCategories()
-items = []
-
-i = 0
-for category in categories:
-    items += scanItems(category)
-    if i == 0:
-        break
-    i += 1
-
-itemsMoreInfo = scanForMoreInfo(items)
-postData(itemsMoreInfo)
+def postPriceItem(data):
+    for item in data:
+        itemTransformed = {"id_trgovine": ID_STORE, "Cena": item["price"]}
+        r = requests.post(URL_SERVER + "/cena", json=itemTransformed)
+        if r.status_code != 201:
+            print("Error posting price to the server")
+            break
+        print("Posted item price with id: " + str(item["id"]))
 
 
-#f = open("items.json", "w")
+def getExistingItems():
+    items = []
+    print("Getting all items already stored")
+    r = requests.get(URL_SERVER + "/trgovina/" + ID_STORE)
+    if r.status_code != 200:
+        print("Error when getting data from the server")
+        return items
+
+    full = r.json()
+    for item in full:
+        items.append(item.id)
+
+    return items
+
+
+def scan():
+    stored = getExistingItems()
+
+    categories = scanCategories()
+    items = []
+    itemsFull = []
+
+    i = 0
+    for category in categories:
+        items += scanItems(category)
+        if i == 0:
+            break
+        i += 1
+
+    for item in items:
+        for store in stored:
+            if item["id"] == store["id"]:
+                break
+        if item["id"] == store["id"]:
+            itemsFull.append(item)
+
+    itemsMoreInfo = scanForMoreInfo(items)
+    postFullItem(itemsMoreInfo)
+
+    postPriceItem(items)
+
+
+scan()
+
+
+# f = open("items.json", "w")
 # f.write(json.dumps(items))
 # f.close()
