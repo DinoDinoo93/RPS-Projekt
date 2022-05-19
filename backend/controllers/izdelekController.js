@@ -54,6 +54,7 @@ module.exports = {
         
         var izdelek = new IzdelekModel({
 			id_trgovine : req.body.id_trgovine,
+            id_izdelek: req.body.id_izdelek,
 			Naziv : req.body.Naziv,
 			Vrsta : req.body.Vrsta,
 			Opis : req.body.Opis,
@@ -93,6 +94,7 @@ module.exports = {
             }
 
             izdelek.id_trgovine = req.body.id_trgovine ? req.body.id_trgovine : izdelek.id_trgovine;
+            izdelek.id_izdelek = req.body.id_izdelek ? req.body.id_izdelek : izdelek.id_izdelek;
 			izdelek.Naziv = req.body.Naziv ? req.body.Naziv : izdelek.Naziv;
 			izdelek.Vrsta = req.body.Vrsta ? req.body.Vrsta : izdelek.Vrsta;
 			izdelek.Opis = req.body.Opis ? req.body.Opis : izdelek.Opis;

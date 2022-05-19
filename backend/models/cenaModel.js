@@ -3,10 +3,9 @@ var Schema   = mongoose.Schema;
 
 var cenaSchema = new Schema({
 	'id_izdelka' : String,
-	'Datum_cas' : Date,
 	'Cena' : Number,
 	'id_izdelek' : String // id izdelka iz spletne strani
-});
+}, {timestamps: true});
 
 cenaSchema.pre('save', function(next){
 	var cena = this;

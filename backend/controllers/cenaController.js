@@ -24,7 +24,7 @@ module.exports = {
     },
     ceneIzdelka: function (req, res) {
         var id = req.params.id;
-        CenaModel.find({id_izdelka:id},function (err, cenas) {
+        CenaModel.find({id_izdelek:id},function (err, cenas) {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when getting cena.',
@@ -66,8 +66,7 @@ module.exports = {
     create: function (req, res) {
 
         var cena = new CenaModel({
-			id_izdelka : req.body.id_izdelka,
-			Datum_cas : req.body.Datum_cas,
+			id_izdelek: req.body.id_izdelek,
 			Cena : req.body.Cena
         });
 
@@ -103,8 +102,7 @@ module.exports = {
                 });
             }
 
-            cena.id_izdelka = req.body.id_izdelka ? req.body.id_izdelka : cena.id_izdelka;
-			cena.Datum_cas = req.body.Datum_cas ? req.body.Datum_cas : cena.Datum_cas;
+            cena.id_izdelek = req.body.id_izdelek ? req.body.id_izdelek : cena.id_izdelek;
 			cena.Cena = req.body.Cena ? req.body.Cena : cena.Cena;
 			
             cena.save(function (err, cena) {

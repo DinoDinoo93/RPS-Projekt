@@ -1,18 +1,20 @@
 import requests
 import json
 from bs4 import BeautifulSoup
+from datetime import datetime
 
-URL_SERVER = "http://localhost:3001"
+SERVER_URL = "http://localhost:3001"
 
-ID_STORE = '62741fc2d35dc887e324bfc9'
-URL_STORE = 'https://www.mlacom.si'
+STORE_ID = '62741fc2d35dc887e324bfc9'
+STORE_URL = 'https://www.mlacom.si'
+STORE_NAME = 'Mlacom'
 
 
 def scanCategories():
     categories = []
     try:
         print("Scanning categories")
-        r = requests.get(URL_STORE)
+        r = requests.get(STORE_URL)
         if r.status_code == 200:
             soup = BeautifulSoup(r.text, 'html.parser')
             categoryMenu = soup.find(id="main-menu").div.ul
@@ -29,7 +31,7 @@ def scanItems(category):
     try:
         print("Scanning items in category: " + category)
         r = requests.get(
-            URL_STORE + category + "?fset=default&page=1&pagesize=0&view=grid&sort=stock_desc")
+            STORE_URL + category + "?fset=default&page=1&pagesize=0&view=grid&sort=stock_desc")
         if r.status_code == 200:
             soup = BeautifulSoup(r.text, 'html.parser')
             itemList = soup.find(id="items-container")
@@ -50,7 +52,7 @@ def scanItems(category):
 def scanItem(id):
     try:
         print("Scanning item with id: " + str(id))
-        r = requests.get(URL_STORE + '/i_' + str(id))
+        r = requests.get(STORE_URL + '/i_' + str(id))
         if r.status_code == 200:
             soup = BeautifulSoup(r.text, 'html.parser')
 
@@ -88,9 +90,9 @@ def scanForMoreInfo(items):
 
 def postFullItem(data):
     for item in data:
-        itemTransformed = {"id_trgovine": ID_STORE,
+        itemTransformed = {"id_trgovine": STORE_ID, "id_izdelek": str(item["id"]),
                            "Naziv": item["title"], "Opis": item["descLong"]+item["descShort"], "Slika": item["image"]}
-        r = requests.post(URL_SERVER + "/izdelek", json=itemTransformed)
+        r = requests.post(SERVER_URL + "/izdelek", json=itemTransformed)
         if r.status_code != 201:
             print("Error posting data to the server")
             break
@@ -99,8 +101,9 @@ def postFullItem(data):
 
 def postPriceItem(data):
     for item in data:
-        itemTransformed = {"id_trgovine": ID_STORE, "Cena": item["price"]}
-        r = requests.post(URL_SERVER + "/cena", json=itemTransformed)
+        itemTransformed = {"id_trgovine": STORE_ID,
+                           "id_izdelek": str(item["id"]), "Cena": item["price"]}
+        r = requests.post(SERVER_URL + "/cena", json=itemTransformed)
         if r.status_code != 201:
             print("Error posting price to the server")
             break
@@ -110,14 +113,14 @@ def postPriceItem(data):
 def getExistingItems():
     items = []
     print("Getting all items already stored")
-    r = requests.get(URL_SERVER + "/trgovina/" + ID_STORE)
-    if r.status_code != 200:
+    r = requests.get(SERVER_URL + "/trgovina/" + STORE_NAME)
+    if r.status_code != 201:
         print("Error when getting data from the server")
         return items
 
     full = r.json()
     for item in full:
-        items.append(item.id)
+        items.append(item["id_izdelek"])
 
     return items
 
@@ -137,20 +140,22 @@ def scan():
         i += 1
 
     for item in items:
+        found = False
         for store in stored:
-            if item["id"] == store["id"]:
+            if str(item["id"]) == store:
+                found = True
+                #print("Izdelek " + str(item["id"]) + " ze shranjen v bazi")
                 break
-        if item["id"] == store["id"]:
+        if not found:
             itemsFull.append(item)
 
-    itemsMoreInfo = scanForMoreInfo(items)
+    itemsMoreInfo = scanForMoreInfo(itemsFull)
     postFullItem(itemsMoreInfo)
 
     postPriceItem(items)
 
 
 scan()
-
 
 # f = open("items.json", "w")
 # f.write(json.dumps(items))

@@ -10,7 +10,7 @@ var izdelekSchema = new Schema({
 	'Slika' : String,
 	'Kategorija' : String,
 	'id_izdelek' : String // za pobiranje ID-ja iz spletne strani (na spletni strani ima izdelek svoj ID)
-});
+}, {timestamps: true});
 
 izdelekSchema.pre('save', function(next){
 	var izdelek = this;

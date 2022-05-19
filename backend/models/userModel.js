@@ -6,7 +6,7 @@ var userSchema = new Schema({
 	'username' : String,
 	'password' : String,
 	'email' : String
-});
+}, {timestamps: true});
 
 userSchema.pre('save', function(next){
 	var user = this;

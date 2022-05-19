@@ -9,7 +9,7 @@ var trgovinaSchema = new Schema({
 	'Kraj' : String,
 	'Lastnik' : String,
 	'Spletna_stran' : String
-});
+}, {timestamps: true});
 
 trgovinaSchema.pre('save', function(next){
 	var trgovina = this;
