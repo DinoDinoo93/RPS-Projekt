@@ -7,7 +7,8 @@ var izdelekSchema = new Schema({
 	'Vrsta' : String,
 	'Opis' : String,
 	'Slika' : String,
-	'Kategorija' : String
+	'Kategorija' : String,
+	"id_izdelka" : String
 });
 
 izdelekSchema.pre('save', function(next){
