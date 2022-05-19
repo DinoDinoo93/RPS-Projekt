@@ -1,179 +1,166 @@
 {
-    "resources": [
-      {
-        "index": "0",
-        "id_trgovine": "567890987", 
-        "title": "Ryzen 7", 
-        "opis":  "To je opis", 
-        "link": "http://localhost:3000/item",
-        "imageUrl": "https://www.mimovrste.com/i/43220161", 
-        "podjetje": "Noctua",
-        "kategorija": "komponente",
-        "cena": "100€",
-        "zgodovinaCen": [
-          {
-            "datumCene": "1.05.2022",
-            "cena": "100"
-          },
-          {
-            "datumCene": "2.05.2022",
-            "cena": "140"
-          },
-          {
-            "datumCene": "3.05.2022",
-            "cena": "120"
-          },
-          {
-            "datumCene": "4.05.2022",
-            "cena": "100"
-          }
-        ]
-      },
-      {
-        "index": "1",
-        "id_trgovine": "567890987", 
-        "title": "Ryzen 6", 
-        "opis":  "To je opis", 
-        "link": "http://localhost:3000/item",
-        "imageUrl": "https://www.tradeinn.com/f/13795/137954422/amd-ryzen-7-5800x-3.8ghz-cpu.jpg", 
-        "podjetje": "Noctua",
-        "kategorija": "komponente",
-        "cena": "120€",
-        "zgodovinaCen": [
-          {
-            "datumCene": "1.05.2022",
-            "cena": "100"
-          },
-          {
-            "datumCene": "2.05.2022",
-            "cena": "140"
-          },
-          {
-            "datumCene": "3.05.2022",
-            "cena": "120"
-          },
-          {
-            "datumCene": "4.05.2022",
-            "cena": "100"
-          }
-        ]
-      },
-      {
-        "index": "2",
-        "id_trgovine": "567890987", 
-        "title": "Ryzen 9", 
-        "opis":  "To je opis", 
-        "link": "http://localhost:3000/item",
-        "imageUrl": "https://www.mimovrste.com/i/52633571/550/550", 
-        "podjetje": "Noctua",
-        "kategorija": "komponente",
-        "cena": "140€",
-        "zgodovinaCen": [
-          {
-            "datumCene": "1.05.2022",
-            "cena": "100"
-          },
-          {
-            "datumCene": "2.05.2022",
-            "cena": "140"
-          },
-          {
-            "datumCene": "3.05.2022",
-            "cena": "120"
-          },
-          {
-            "datumCene": "4.05.2022",
-            "cena": "100"
-          }
-        ]
-      },
-      {
-        "index": "3",
-        "id_trgovine": "567890987", 
-        "title": "Ryzen 9", 
-        "opis":  "To je opis", 
-        "link": "http://localhost:3000/item",
-        "imageUrl": "https://m.media-amazon.com/images/I/71S31CWSs3L._AC_SL1093_.jpg", 
-        "podjetje": "Noctua",
-        "kategorija": "komponente",
-        "cena": "160€",
-        "zgodovinaCen": [
-          {
-            "datumCene": "1.05.2022",
-            "cena": "100"
-          },
-          {
-            "datumCene": "2.05.2022",
-            "cena": "140"
-          },
-          {
-            "datumCene": "3.05.2022",
-            "cena": "120"
-          },
-          {
-            "datumCene": "4.05.2022",
-            "cena": "100"
-          }
-        ]
-      },
-      {
-        "index": "4",
-        "id_trgovine": "567890987", 
-        "title": "Intel 9", 
-        "opis":  "To je opis", 
-        "link": "http://localhost:3000/item",
-        "imageUrl": "https://www.mimovrste.com/i/48822525/550/550", 
-        "podjetje": "Noctua",
-        "kategorija": "komponente",
-        "cena": "180€",
-        "zgodovinaCen": [
-          {
-            "datumCene": "1.05.2022",
-            "cena": "100"
-          },
-          {
-            "datumCene": "2.05.2022",
-            "cena": "140"
-          },
-          {
-            "datumCene": "3.05.2022",
-            "cena": "120"
-          },
-          {
-            "datumCene": "4.05.2022",
-            "cena": "100"
-          }
-        ]
-      },
-      {
-        "index": "5",
-        "id_trgovine": "567890987", 
-        "title": "Ventilator za PC", 
-        "opis":  "To je opis", 
-        "link": "http://localhost:3000/item",
-        "imageUrl": "https://m.media-amazon.com/images/I/613CfTnpwoL._AC_SX450_.jpg", 
-        "podjetje": "Noctua",
-        "kategorija": "komponente",
-        "cena": "200€",
-        "zgodovinaCen": [
-          {
-            "datumCene": "1.05.2022",
-            "cena": "100"
-          },
-          {
-            "datumCene": "2.05.2022",
-            "cena": "140"
-          },
-          {
-            "datumCene": "3.05.2022",
-            "cena": "120"
-          },
-          {
-            "datumCene": "4.05.2022",
-            "cena": "100"
-          }
-        ]
-      }
-    ]
-  }
+  "izdelki": [
+    {
+      "idIzdelka": "0",
+      "idTrgovine": "0",
+      "naziv": "Ryzen 7 4900x",
+      "vrsta": "Procesor",
+      "opis": "Vestibulum vitae auctor odio. Aliquam sagittis turpis vel dolor sodales porttitor. Pellentesque ipsum metus, congue sit amet sapien ut, gravida ultrices augue. Praesent facilisis orci eget felis pretium, a fermentum velit feugiat. Etiam bibendum nulla posuere suscipit tincidunt. Nullam maximus dignissim leo vel vulputate. Nulla ac lectus efficitur mauris placerat sollicitudin. Nullam quis vulputate est.",
+      "slika": "https://www.mimovrste.com/i/43220161",
+      "kategorija": "Računalniške komponente",
+      "zgodovinaCen": [
+        {
+          "idIzdelka": "0",
+          "datumCas": "1.1.2022",
+          "cena": "10"
+        },
+        {
+          "idIzdelka": "0",
+          "datumCas": "2.1.2022",
+          "cena": "15"
+        },
+        {
+          "idIzdelka": "0",
+          "datumCas": "3.1.2022",
+          "cena": "17"
+        },
+        {
+          "idIzdelka": "0",
+          "datumCas": "4.1.2022",
+          "cena": "16"
+        },
+        {
+          "idIzdelka": "0",
+          "datumCas": "5.1.2022",
+          "cena": "16"
+        },
+        {
+          "idIzdelka": "0",
+          "datumCas": "6.1.2022",
+          "cena": "16"
+        },
+        {
+          "idIzdelka": "0",
+          "datumCas": "7.1.2022",
+          "cena": "13"
+        }
+      ]
+    },
+    {
+      "idIzdelka": "1",
+      "idTrgovine": "1",
+      "naziv": "Ryzen 9 6900x",
+      "vrsta": "Procesor",
+      "opis": "Vestibulum vitae auctor odio. Aliquam sagittis turpis vel dolor sodales porttitor. Pellentesque ipsum metus, congue sit amet sapien ut, gravida ultrices augue. Praesent facilisis orci eget felis pretium, a fermentum velit feugiat. Etiam bibendum nulla posuere suscipit tincidunt. Nullam maximus dignissim leo vel vulputate. Nulla ac lectus efficitur mauris placerat sollicitudin. Nullam quis vulputate est.",
+      "slika": "https://www.mimovrste.com/i/43220388/550/550",
+      "kategorija": "Računalniške komponente",
+      "zgodovinaCen": [
+        {
+          "idIzdelka": "1",
+          "datumCas": "1.1.2022",
+          "cena": "140"
+        },
+        {
+          "idIzdelka": "1",
+          "datumCas": "2.1.2022",
+          "cena": "120"
+        },
+        {
+          "idIzdelka": "1",
+          "datumCas": "3.1.2022",
+          "cena": "110"
+        },
+        {
+          "idIzdelka": "1",
+          "datumCas": "4.1.2022",
+          "cena": "110"
+        },
+        {
+          "idIzdelka": "1",
+          "datumCas": "5.1.2022",
+          "cena": "130"
+        },
+        {
+          "idIzdelka": "1",
+          "datumCas": "6.1.2022",
+          "cena": "130"
+        },
+        {
+          "idIzdelka": "1",
+          "datumCas": "7.1.2022",
+          "cena": "140"
+        }
+      ]
+    },
+    {
+      "idIzdelka": "2",
+      "idTrgovine": "1",
+      "naziv": "Ryzen 9 6900x",
+      "vrsta": "Procesor",
+      "opis": "Vestibulum vitae auctor odio. Aliquam sagittis turpis vel dolor sodales porttitor. Pellentesque ipsum metus, congue sit amet sapien ut, gravida ultrices augue. Praesent facilisis orci eget felis pretium, a fermentum velit feugiat. Etiam bibendum nulla posuere suscipit tincidunt. Nullam maximus dignissim leo vel vulputate. Nulla ac lectus efficitur mauris placerat sollicitudin. Nullam quis vulputate est.",
+      "slika": "https://www.mimovrste.com/i/43220388/550/550",
+      "kategorija": "Računalniške komponente",
+      "zgodovinaCen": [
+        {
+          "idIzdelka": "2",
+          "datumCas": "1.1.2022",
+          "cena": "140"
+        },
+        {
+          "idIzdelka": "2",
+          "datumCas": "2.1.2022",
+          "cena": "120"
+        },
+        {
+          "idIzdelka": "2",
+          "datumCas": "3.1.2022",
+          "cena": "110"
+        },
+        {
+          "idIzdelka": "2",
+          "datumCas": "4.1.2022",
+          "cena": "110"
+        },
+        {
+          "idIzdelka": "2",
+          "datumCas": "5.1.2022",
+          "cena": "130"
+        },
+        {
+          "idIzdelka": "2",
+          "datumCas": "6.1.2022",
+          "cena": "130"
+        },
+        {
+          "idIzdelka": "2",
+          "datumCas": "7.1.2022",
+          "cena": "140"
+        }
+      ]
+    }
+  ],
+  "trgovine":[
+    {
+      "idTrgovine": "0",
+      "naziv": "Mimovrste",
+      "celotenNaziv": "Mimovrste d.o.o",
+      "naslov": "Razbojnikova ulica 69",
+      "posta": "3000",
+      "kraj": "Celje",
+      "lastnik": "Jože Novak",
+      "spletnaStran": "mimovrste.com",
+      "slikaLogo": "https://www.mimovrste.com/_nuxt/img/LogoSl10SI.e860cb9.543.svg"
+    },
+    {
+      "idTrgovine": "1",
+      "naziv": "Anni",
+      "celotenNaziv": "Anni d.o.o",
+      "naslov": "Razbojnikova ulica 420",
+      "posta": "2000",
+      "kraj": "Maribor",
+      "lastnik": "Jožica Novak",
+      "spletnaStran": "anni.com"
+    }
+  ]
+}
   

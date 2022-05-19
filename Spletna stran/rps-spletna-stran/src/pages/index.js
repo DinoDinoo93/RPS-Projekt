@@ -24,13 +24,13 @@ const Home = () => {
     }
     */
     let onOnclickHandler = (e) => {
-        data.resources.filter((val)=>{
-            if(val.title.toLowerCase().includes(textInput.current.value.toLowerCase())){
+        data.izdelki.filter((val)=>{
+            if(val.naziv.toLowerCase().includes(textInput.current.value.toLowerCase())){
               return val;
             }
             else {
               console.log("Ni najdel");
-              console.log(val.title.toLowerCase());
+              console.log(val.naziv.toLowerCase());
               console.log(textInput.current.value.toLowerCase())
             }
           }).map((val,key)=>{
@@ -52,11 +52,11 @@ const Home = () => {
             <div class="max-w-lg">
                 <h2>Najbolje iskani izdelki</h2>
                 <Carousel cols={3} rows={1} gap={10} loop>
-                    {data.resources.map((resource, index) => {
+                    {data.izdelki.map((izdelek, index) => {
                         return (
                             <Carousel.Item>
-                                <a href={"/item?index=" + resource.index} >
-                                    <img width="100%" src={resource.imageUrl} />
+                                <a href={"/item?index=" + izdelek.idIzdelka} >
+                                    <img width="100%" src={izdelek.slika} />
                                 </a>
                             </Carousel.Item>
                         );
