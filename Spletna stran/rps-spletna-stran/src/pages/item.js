@@ -5,11 +5,13 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from "recharts";
 
 const queryParams = new URLSearchParams(window.location.search)
 const idFromUrl = queryParams.get("id")
-
+let noveCene = [];
 
 const Item = () => {
   const [rezultati, setRezultati] = useState([]);
   const [cene, setCena] = useState([]);
+  const [ceneList, dodajCene] = useState([]);
+
   async function getRezultati() {
     const res = await fetch(`http://localhost:3001/izdelek`)
     const data = await res.json();
@@ -29,7 +31,6 @@ const Item = () => {
         latestPrice = cene[i]["Cena"];
       }
     }
-
     return latestPrice;
   }
 
@@ -44,13 +45,19 @@ const Item = () => {
     })
   }, []);
 
-
-
   return (
     <div class="flex-grow">
         <div class="m-auto max-w-3xl">
                 {rezultati.map((rezultat, index) => {
                     if(rezultati[index]["id_izdelek"] == idFromUrl){
+                      noveCene = [];
+                        for(let i = 0; i < cene.length; i++){
+                          if(cene[i]["id_izdelek"] == rezultati[index]["id_izdelek"]){
+                            cene[i]["createdAt"] = cene[i]["createdAt"].substring(0,10);
+                            noveCene.push(cene[i]);
+                          }
+                        }
+                        console.log(noveCene);
                         return (
                           /*
                           <div>
@@ -77,6 +84,21 @@ const Item = () => {
                                   <div class="p-6">
                                     <h2 class="font-bold mb-2 text-2xl text-purple-800">{rezultati[index]["Naziv"]}</h2>
                                     <p class="text-purple-700 mb-2">{rezultati[index]["Opis"].replace(/<[^>]*>?/gm, '')}</p>
+                                    <LineChart
+                                      width={500}
+                                      height={300}
+                                      data={noveCene}
+                                    >
+                                    <XAxis dataKey="createdAt" />
+                                    <YAxis />
+                                    <Tooltip />
+                                    <Line
+                                      type="monotone"
+                                      dataKey="Cena"
+                                      stroke="#8884d8"
+                                      activeDot={{ r: 1 }}
+                                    />
+                                </LineChart>
                                     <div class="grid grid-cols-2 divide-x divide-none">
                                       <div><img class="p-2" src="https://www.mlacom.si/en/iimg/67152/1440x256/i.png"></img></div>
                                       <div class="grid grid-cols-1 divide-y place-items-center">

@@ -46,7 +46,6 @@ const Home = () => {
             </div>
             <h2>Izbrani izdelki</h2>
             <div class="max-w-lg">
-                
                 <Carousel cols={3} rows={1} gap={10} loop>
                     {rezultati.map((rezultat, index) => {
                       if(index > 1 && index < 11){
