@@ -7,7 +7,8 @@ import Navbar from "./navigation/Navbar.js";
 import Footer from "./footer/Footer.js";
 import Home from "./pages";
 import Item from "./pages/item.js";
-import ListItems from "./pages/listItem.js";
+import Items from "./pages/listItem.js";
+import SearchItems from "./pages/searchItem";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       <Routes>
         <Route path='/' exact element={<Home />} />
         <Route path='/item' element={<Item />} />
-        <Route path='/listItems' element={<ListItems />} />
+        <Route path='/listItems' element={<Items />} />
+        <Route path='/searchItems' element={<SearchItems />} />
       </Routes>
       <Footer />
       </Router>   
