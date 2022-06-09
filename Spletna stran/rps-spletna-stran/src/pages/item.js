@@ -80,7 +80,7 @@ const Item = () => {
                           <div>
                             <div class="p-20 bg-purple-100 w-full">
                               <div class="bg-white rounded-lg shadow-lg">
-                                <img src={"https://www.mlacom.si/en" + rezultati[index]["Slika"]} alt="" class="rounded-t-lg p-10"/>
+                                <img src={"https://www.mlacom.si" + rezultati[index]["Slika"]} alt="" class="rounded-t-lg p-10"/>
                                   <div class="p-6">
                                     <h2 class="font-bold mb-2 text-2xl text-purple-800">{rezultati[index]["Naziv"]}</h2>
                                     <p class="text-purple-700 mb-2">{rezultati[index]["Opis"].replace(/<[^>]*>?/gm, '')}</p>
@@ -100,7 +100,7 @@ const Item = () => {
                                     />
                                 </LineChart>
                                     <div class="grid grid-cols-2 divide-x divide-none">
-                                      <div><img class="p-2" src="https://www.mlacom.si/en/iimg/67152/1440x256/i.png"></img></div>
+                                      <div><img class="p-2" src="https://www.mlacom.si/iimg/67152/1440x256/i.png"></img></div>
                                       <div class="grid grid-cols-1 divide-y place-items-center">
                                         <div>Cena: {returnPrice(index)} €</div>
                                         <div>

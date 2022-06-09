@@ -52,7 +52,7 @@ const Home = () => {
                         return (
                           <Carousel.Item>
                               <a href={"/item?id=" + rezultati[index]["id_izdelek"]} >
-                                  <img width="100%" class="object-fill" src={"https://www.mlacom.si/en" + rezultati[index]["Slika"]} />
+                                  <img width="100%" class="object-fill" src={"https://www.mlacom.si" + rezultati[index]["Slika"]} />
                               </a>
                           </Carousel.Item>
                       );
