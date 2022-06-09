@@ -71,12 +71,22 @@ def scanItem(id):
             else:
                 descLong = str(descLongEl)
 
-            price = float(soup.find(class_="taxedPrice").string.replace(
-                ".", "").replace(
-                ",", ".").replace("€", "").strip())
+            price_obj = soup.find(class_="taxedPrice")
+            price = 0.0
+            if price_obj is not None:
+                price = float(price_obj.string.replace(
+                    ".", "").replace(
+                    ",", ".").replace("€", "").strip())
+            #price_str = soup.find(class_="taxedPrice").string
+            #price = 0.0
+            # if price_str[0] >= '0' and price_str[0] <= '9':
+            #    price = float(price_str.replace(
+            #        ".", "").replace(
+            #        ",", ".").replace("€", "").strip())
 
             image = soup.find(class_="midPic").get('href')
-            return {"id": id, "title": title, "descShort": descShort, "descLong": descLong, "price": price, "image": image}
+            return {"id": id, "title": title, "descShort": descShort,
+                    "descLong": descLong, "price": price, "image": image}
     except Exception as err:
         print(err)
 
